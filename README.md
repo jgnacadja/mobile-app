@@ -21,3 +21,4 @@ For open source projects, say how it is licensed.
 
 ## Contribution
 -Ajout de la classe User: YACOUBOU Yassiminatou
+-Ajout de la classe Tag : ADJADJIHOUE Grâce
