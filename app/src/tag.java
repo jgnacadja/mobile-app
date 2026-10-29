@@ -13,25 +13,26 @@ Class Tag{
 
     //Construsteur
     public Tag(int idTag, String label, Date dateCreation, Date dateModif) {
-        this.idTag = idTag;
+        this.idTag = compteurId++;
         this.label = label;
         this.dateCreation = dateCreation;
         this.dateModif = dateModif;
     }
     //Methodes
     public static void createTag(String label, Date dateCreation, Date dateModif) {
-        int idTag = compteurId++;
-        Tag tag = new Tag(idTag, label, dateCreation, dateModif);
+        Tag tag = new Tag(label, dateCreation, dateModif);
         tags.add(tag);
     }
 
-    public static void updateTag(int idTag, String label, Date dateCreation, Date dateModif) {
+      public static void updateTag(int idTag, String label) {
         Tag tag = findById(idTag);
+
         if (tag != null) {
-            tags.remove(tag);
-            tags.add(new Tag(idTag, label, dateCreation, dateModif));
+            tag.setLabel(label);
+            tag.setDateModif(new Date());
         }
     }
+
     public static void deleteTag(int idTag) {
         Tag tag = findById(idTag);
         if (tag != null) {
@@ -72,7 +73,7 @@ Class Tag{
     }
 
     public void setDateCreation(Date dateCreation) {
-        this.dateCreation = dateCreation;
+        this.dateCreation = new Date();
     }
 
     public Date getDateModif() {
@@ -80,6 +81,6 @@ Class Tag{
     }
 
     public void setDateModif(Date dateModif) {
-        this.dateModif = dateModif;
+        this.dateModif = new Date();
     }
 }
