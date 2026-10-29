@@ -45,15 +45,16 @@ public class Dossier {
     }
 
     public boolean update(Dossier dossier) {
-        for (Dossier d : dossiers) {
-            if (d.getIdDossier() == dossier.getIdDossier()) {
-                d.setLabel(dossier.getLabel());
-                return true;
-            }
-        }
+    Dossier d = find(dossier.getIdDossier());
 
-        return false;
+    if (d != null) {
+        d.setNomDossier(dossier.getNomDossier());
+        d.setDescription(dossier.getDescription());
+        return true;
     }
+
+    return false;
+}
 
     public Dossier findById(int id) {
         for (Dossier d : dossiers) {
