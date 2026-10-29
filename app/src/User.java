@@ -8,6 +8,7 @@ public class User {
    private string mdp;
 
     public User(){}
+
     public User(int idUser, string nom, string prenoms,string dateIns, string email, string mdp){
     this.idUser= idUser;
     this.nom= nom;
@@ -17,9 +18,9 @@ public class User {
     this.mdp=mdp;
   }
 
-  public int getidUser(){return idUser;} 
-  public void setidUser(int idUser){this.idUser= idUser;
-}
+   public int getidUser(){return idUser;} 
+   public void setidUser(int idUser){this.idUser= idUser;}
+
    public string getNom(){return nom;} 
    public void setNom(string nom){this.nom=nom;}
 
@@ -34,6 +35,14 @@ public class User {
 
    public string getMdp(){return mdp;} 
    public void setMdp(string mdp){this.mdp= mdp;}
+
+   @Override
+   public String toString() {
+    return "User{id=" + idUser + ", nom=" + nom + ", prenoms=" + prenoms + ", email=" + email + "}";}
+
+   public boolean verifierMotDePasse(String motDePasse) {return this.mdp.equals(motDePasse);}
+
+   
 }
 
  
