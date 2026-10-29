@@ -15,8 +15,8 @@ Class Tag{
     public Tag(int idTag, String label, Date dateCreation, Date dateModif) {
         this.idTag = compteurId++;
         this.label = label;
-        this.dateCreation = dateCreation;
-        this.dateModif = dateModif;
+        this.dateCreation = new Date();
+        this.dateModif = new Date();
     }
     //Methodes
     public static void createTag(String label, Date dateCreation, Date dateModif) {
