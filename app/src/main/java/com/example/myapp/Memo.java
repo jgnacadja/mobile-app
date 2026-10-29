@@ -1,101 +1,84 @@
 package com.example.myapp;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Memo {
+    private static final Map<Integer, Memo> liste = new HashMap<>();
+
     private int idMemo;
     private String titre;
     private String contenu;
-    private String dateCreation;
-    private String dateModif;
+    private final Date dateCreation;
+    private Date dateModif;
     private int idUser;
     private int idDossier;
 
-    private List<Memo> liste; 
-
-    
-    public Memo(List<Memo> liste) {
-        this.liste = liste;
-    }
-
-    
-    public Memo(int idMemo, String titre, String contenu, String dateCreation,
-                String dateModif, int idUser, int idDossier) {
+    public Memo(int idMemo, String titre, String contenu, int idUser, int idDossier) {
         this.idMemo = idMemo;
         this.titre = titre;
         this.contenu = contenu;
-        this.dateCreation = dateCreation;
-        this.dateModif = dateModif;
         this.idUser = idUser;
         this.idDossier = idDossier;
+        this.dateCreation = new Date();
+        this.dateModif = new Date();
     }
 
-    
+    private void touch() { this.dateModif = new Date(); }
+
+  
     public int getIdMemo() { return idMemo; }
-    public void setIdMemo(int idMemo) { this.idMemo = idMemo; }
 
     public String getTitre() { return titre; }
-    public void setTitre(String titre) { this.titre = titre; }
+    public void setTitre(String titre) { this.titre = titre; touch(); }
 
     public String getContenu() { return contenu; }
-    public void setContenu(String contenu) { this.contenu = contenu; }
+    public void setContenu(String contenu) { this.contenu = contenu; touch(); }
 
-    public String getDateCreation() { return dateCreation; }
-    public void setDateCreation(String dateCreation) { this.dateCreation = dateCreation; }
-
-    public String getDateModif() { return dateModif; }
-    public void setDateModif(String dateModif) { this.dateModif = dateModif; }
+    public Date getDateCreation() { return new Date(dateCreation.getTime()); }
+    public Date getDateModif() { return new Date(dateModif.getTime()); }
 
     public int getIdUser() { return idUser; }
-    public void setIdUser(int idUser) { this.idUser = idUser; }
+    public void setIdUser(int idUser) { this.idUser = idUser; touch(); }
 
     public int getIdDossier() { return idDossier; }
-    public void setIdDossier(int idDossier) { this.idDossier = idDossier; }
+    public void setIdDossier(int idDossier) { this.idDossier = idDossier; touch(); }
 
-    
-    public boolean create(Memo o) {
-        return liste.add(o);
+    public static boolean create(Memo o) {
+        if (o == null || liste.containsKey(o.idMemo)) return false;
+        liste.put(o.idMemo, o);
+        return true;
     }
 
-    public boolean delete(Memo o) {
-        return liste.remove(o);
+    public static boolean delete(int id) {
+        return liste.remove(id) != null;
     }
 
-    public boolean update(Memo o) {
-        for (Memo x : liste) {
-            if (x.getIdMemo() == o.getIdMemo()) {
-                x.setTitre(o.getTitre());
-                x.setContenu(o.getContenu());
-                x.setDateModif(o.getDateModif());
-                x.setIdUser(o.getIdUser());
-                x.setIdDossier(o.getIdDossier());
-                return true;
-            }
-        }
-        return false;
+    public static boolean update(Memo o) {
+        Memo x = liste.get(o.idMemo);
+        if (x == null) return false;
+        x.setTitre(o.titre);
+        x.setContenu(o.contenu);
+        x.setIdUser(o.idUser);
+        x.setIdDossier(o.idDossier);
+        return true;
     }
 
-    public Memo findById(int id) {
-        for (Memo x : liste) {
-            if (x.getIdMemo() == id) {
-                return x;
-            }
-        }
-        return null;
+    public static Memo findById(int id) {
+        return liste.get(id);
     }
 
-    public List<Memo> findAll() {
-        return liste;
+    public static List<Memo> findAll() {
+        return new ArrayList<>(liste.values());
     }
 
- 
+    @Override
     public String toString() {
-        return "Memo{id=" + idMemo
-            + ", titre=" + titre
-            + ", contenu=" + contenu
-            + ", dateCreation=" + dateCreation
-            + ", dateModif=" + dateModif
-            + ", idUser=" + idUser
-            + ", idDossier=" + idDossier + "}";
+        return "Memo{id=" + idMemo + ", titre=" + titre + ", contenu=" + contenu
+            + ", dateCreation=" + dateCreation + ", dateModif=" + dateModif
+            + ", idUser=" + idUser + ", idDossier=" + idDossier + "}";
     }
 }
