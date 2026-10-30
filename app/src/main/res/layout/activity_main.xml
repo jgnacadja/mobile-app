@@ -31,6 +31,7 @@
         android:fontFamily=""
         android:textColor="@color/black"
         android:layout_below="@+id/text1"
+
         />
 
     <TextView
@@ -53,22 +54,32 @@
         android:background="@drawable/border"
         android:backgroundTint="#97979780"
         android:ems="10"
-        android:hint=" "
         android:layout_centerHorizontal="true"
         android:layout_below="@id/text3"
-        android:inputType="textEmailAddress"
-        android:visibility="visible" />
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/textErreur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextTextEmailAddress2"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="-60dp"
+        android:text="Email invalide"
+        android:textColor="#FF0000"
+        android:visibility="invisible" />
+
     <Button
         android:id="@+id/button2"
-        android:layout_width="139dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="129dp"
+        android:layout_height="67dp"
+        android:layout_below="@id/text3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="177dp"
         android:layout_marginBottom="178dp"
         android:backgroundTint="#FF5B74"
         android:text="OK"
-        android:layout_centerHorizontal="true"
-        android:textSize="20sp"
-        android:layout_below="@id/text3"/>
+        android:textSize="20sp" />
 
 
 
@@ -76,12 +87,11 @@
         android:id="@+id/copyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:textStyle="bold"
         android:text="copyright | 2026"
         android:layout_centerHorizontal="true"
         android:textSize="16sp"
         android:layout_below="@id/button2"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="50dp" />
 
 </RelativeLayout>
