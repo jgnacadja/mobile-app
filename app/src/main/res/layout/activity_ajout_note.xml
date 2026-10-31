@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F5F7"
+    tools:context=".AjoutNote">
+
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:tint="#9E9E9E" />
+
+    <!-- Titre "Nouvelle Note" -->
+    <TextView
+        android:layout_below="@id/btn_close"
+        android:id="@+id/tv_titre_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Nouvelle"
+        android:textColor="#1A1A1A"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_below="@id/tv_titre_page"
+        android:id="@+id/tv_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Note"
+        android:textSize="45dp"
+        />
+
+    <!-- La carte blanche -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_titre_page"
+        android:layout_marginTop="65dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp">
+
+            <!-- Champ Titre -->
+            <EditText
+                android:id="@+id/et_titre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:backgroundTint="#D1D1D1"
+                android:hint="Titre"
+                android:inputType="text"
+                android:paddingBottom="12dp"
+                android:textSize="18sp" />
+
+            <!-- Champ Description -->
+            <!-- Conteneur pour la description et sa barre verticale -->
+            <RelativeLayout
+                android:id="@+id/layout_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/et_titre"
+                android:layout_marginTop="20dp">
+
+                <!-- La barre verticale -->
+                <View
+                    android:id="@+id/barre_verticale"
+                    android:layout_width="2dp"
+                    android:layout_height="200dp"
+                    android:background="#D1D1D1" />
+
+                <!-- Le champ Description -->
+                <EditText
+                    android:id="@+id/et_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/barre_verticale"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:gravity="top|start"
+                    android:hint="Description"
+                    android:inputType="textMultiLine"
+                    android:minLines="12"
+                    android:paddingBottom="12dp"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <!-- Zone des Boutons-Tags (Remplaçant les Chips) -->
+            <LinearLayout
+                android:id="@+id/layout_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_description"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <!-- Première ligne de boutons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Bouton Famille (style contour) -->
+                    <Button
+                        android:id="@+id/btnFamille"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Famille"
+                        android:textSize="12sp"
+                        app:backgroundTint="#D9D9D9"
+                        android:textColor="#272140"
+                        app:cornerRadius="20dp"
+                        app:strokeColor="#D1D1D1"
+                        app:strokeWidth="1dp" />
+
+                    <!-- Bouton Ecole (style plein rose) -->
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Ecole"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        app:backgroundTint="#FF5B74"
+                        app:cornerRadius="20dp"
+                        app:strokeWidth="0dp" />
+
+                    <!-- Bouton Finance -->
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Finance"
+                        android:textColor="#272140"
+                        android:textSize="12sp"
+                        app:backgroundTint="#D9D9D9"
+                        app:cornerRadius="20dp"
+                        app:strokeColor="#D1D1D1"
+                        app:strokeWidth="1dp" />
+
+                    <!-- Bouton Boulot (contour violet) -->
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Boulot"
+                        android:textColor="#272140"
+                        android:textSize="12sp"
+                        app:backgroundTint="#A9BBC9"
+                        app:cornerRadius="20dp"
+                        />
+                </LinearLayout>
+               <LinearLayout
+                    android:id="@+id/dynamic_tags_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    <!-- Les nouveaux tags viendront s'insérer ici -->
+                </LinearLayout>
+                <!-- Deuxième ligne de boutons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <!-- Bouton Politique -->
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Politique"
+                        android:textColor="#272140"
+                        android:textSize="12sp"
+                        app:backgroundTint="#D9D9D9"
+                        app:cornerRadius="20dp"
+                        app:strokeColor="#D1D1D1"
+                        app:strokeWidth="1dp" />
+
+                    <!-- Bouton Créer un tag -->
+                    <Button
+                        android:id="@+id/createTag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:insetTop="0dp"
+                        android:insetBottom="0dp"
+                        android:minHeight="0dp"
+                        android:minWidth="0dp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Creer un tag"
+                        android:textColor="#272140"
+                        android:textSize="12sp"
+                        app:backgroundTint="#FFFFFF"
+                        app:cornerRadius="20dp"
+                         />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Bouton Ajouter (Fixé en bas de la carte) -->
+            <Button
+                android:id="@+id/btn_ajouter"
+                android:layout_width="220dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:text="Ajouter"
+                android:textAllCaps="false"
+                android:textSize="18sp"
+                app:backgroundTint="#FF5B74"
+                app:cornerRadius="30dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

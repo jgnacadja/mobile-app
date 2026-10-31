@@ -26,7 +26,36 @@
             android:layout_marginTop="10dp"
             android:text="Organisez votre journée et restez zen"
             />
+        <TextView
+            android:id="@+id/bienvenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenue"
+            android:textSize="45dp"
+            android:textColor="#272140"
+            android:layout_below="@id/text2"
+            android:layout_marginTop="210dp"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"/>
 
+        <TextView
+            android:id="@+id/recup_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/bienvenue"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recup_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:indeterminateTint="#FF5B74"
+            android:visibility="gone" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,8 +108,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="copyright | 2026"
-            android:layout_below="@+id/btnok"
-            android:layout_centerHorizontal="true"
             android:textStyle="bold"
-            android:layout_marginTop="110dp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp" />
+
 </RelativeLayout>
