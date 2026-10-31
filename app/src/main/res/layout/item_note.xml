@@ -20,8 +20,7 @@
             android:layout_width="28dp"
             android:layout_height="28dp"
             android:layout_centerVertical="true"
-            android:src="@android:drawable/checkbox_off_background"
-            app:tint="#D1D1D1" />
+            android:src="@drawable/ic_check_circle" />
 
         <!-- Le titre (ID: tv_note_title) -->
         <TextView

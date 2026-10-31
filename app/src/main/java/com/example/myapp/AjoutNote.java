@@ -166,10 +166,13 @@ public class AjoutNote extends AppCompatActivity {
         newTagButton.setLayoutParams(params);
 
         newTagButton.setOnClickListener(v -> {
+            // Quand on clique sur le tag dynamique, on met à jour la sélection
             selectedTagName = name;
             selectedTagColor = colorHex;
-        });
 
+            // Optionnel : Un petit message pour confirmer la sélection
+            Toast.makeText(AjoutNote.this, "Tag " + name + " sélectionné", Toast.LENGTH_SHORT).show();
+        });
         container.addView(newTagButton);
     }
 

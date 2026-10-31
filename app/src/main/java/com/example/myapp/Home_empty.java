@@ -105,10 +105,26 @@ public class Home_empty extends AppCompatActivity {
         tvDesc.setText(desc);
         tvTag.setText(tagName);
 
-        // On applique la couleur du tag
+        /// 1. La couleur de fond
         tvTag.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(tagColor)));
+        // 2. La couleur du texte (blanc ou noir selon la couleur de fond)
+        tvTag.setTextColor(getTextColorForBackground(tagColor));
 
         // On ajoute la carte au conteneur
         notesContainer.addView(noteView);
+    }
+    // Méthode pour déterminer si le texte doit être noir ou blanc
+    public static int getTextColorForBackground(String colorHex) {
+        int color = Color.parseColor(colorHex);
+        int r = Color.red(color);
+        int g = Color.green(color);
+        int b = Color.blue(color);
+        double luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+        if (luminance > 0.5) {
+            return Color.BLACK; // Couleur claire -> Texte noir
+        } else {
+            return Color.WHITE; // Couleur sombre -> Texte blanc
+        }
     }
 }
