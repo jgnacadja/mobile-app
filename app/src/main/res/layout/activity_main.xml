@@ -1,38 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/white">
 
+    <!-- Titre -->
     <TextView
+        android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="MyTask"
+        android:textColor="@color/dark_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="95dp"/>
 
+    <!-- Sous-titre -->
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My App Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main"
-        app:layout_constraintVertical_bias="0.6" />
+        android:text="Organisez votre journée et restez zen"
+        android:textColor="@color/dark_text"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/txtTitle"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        android:layout_marginTop="5dp"/>
 
+    <!-- Label Email -->
+    <TextView
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/dark_text"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="435dp"/>
+
+    <!-- Champ Email -->
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_email"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:hint=""
+        android:textColor="@color/dark_text"
+        android:textSize="14sp"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
+        android:importantForAutofill="yes"
+        app:layout_constraintTop_toBottomOf="@id/txtEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Message d'erreur -->
+    <TextView
+        android:id="@+id/txtError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email invalide"
+        android:textColor="#FF0000"
+        android:textSize="12sp"
+        android:visibility="gone"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtEmail"/>
+
+    <!-- Bouton OK -->
     <Button
-        android:id="@+id/login"
+        android:id="@+id/btnOk"
+        android:layout_width="170dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="58dp"
+        android:background="@drawable/bg_button"
+        android:backgroundTint="#E91E63"
+        android:elevation="0dp"
+        android:stateListAnimator="@null"
+        android:text="OK"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtEmail"
+        app:rippleColor="#E91E63" />
+
+    <!-- Copyright -->
+    <TextView
+        android:id="@+id/txtCopyright"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="402dp" />
+        android:text="copyright | 2026"
+        android:textColor="@color/dark_text"
+        android:textSize="11sp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

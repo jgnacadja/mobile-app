@@ -1,32 +1,64 @@
 package com.example.myapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import android.util.Patterns;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button loginButton;
+    private EditText edtEmail;
+    private Button btnOk;
+    private TextView txtError;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+
         setContentView(R.layout.activity_main);
-        loginButton = findViewById(R.id.login);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
 
-        loginButton.setOnClickListener(v -> {
-            // Handle login button click
+        edtEmail = findViewById(R.id.edtEmail);
+        btnOk = findViewById(R.id.btnOk);
+        txtError = findViewById(R.id.txtError);
+
+
+        txtError.setVisibility(View.GONE);
+
+        btnOk.setOnClickListener(v -> {
+
+            String email = edtEmail.getText().toString().trim();
+
+
+            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+
+
+                txtError.setVisibility(View.GONE);
+
+            } else {
+
+
+                txtError.setText("Email invalide");
+                txtError.setVisibility(View.VISIBLE);
+
+            }
+
         });
+
+        edtEmail.setOnFocusChangeListener((v, hasFocus) -> {
+
+            if (hasFocus) {
+
+                txtError.setVisibility(View.GONE);
+
+            }
+
+        });
+
     }
 }
