@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
         <activity
+            android:name=".item_note"
+            android:exported="false" />
+        <activity
+            android:name=".Item_note"
+            android:exported="false" />
+        <activity
+            android:name=".TagCreate"
+            android:exported="false" />
+        <activity
+            android:name=".AjoutNote"
+            android:exported="false" />
+        <activity
+            android:name=".Home_empty"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

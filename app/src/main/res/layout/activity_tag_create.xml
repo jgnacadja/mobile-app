@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TagCreate">
+
+
+        <!-- Bouton Retour -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="#9E9E9E" />
+
+        <!-- Titre "Tag" -->
+        <TextView
+            android:id="@+id/tv_title_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_back"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Tag"
+            android:textColor="#1A1A1A"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+
+        <!-- Sous-titre "Nouveau" -->
+        <TextView
+            android:id="@+id/tv_title_nouveau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_tag"
+            android:layout_marginStart="20dp"
+            android:text="Nouveau"
+            android:textColor="#555555"
+            android:textSize="35sp" />
+
+        <!-- Champ Label -->
+        <EditText
+            android:id="@+id/et_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_nouveau"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#D1D1D1"
+            android:hint="Label"
+            android:inputType="text"
+            android:paddingBottom="12dp"
+            android:textSize="18sp" />
+
+        <!-- Carte blanche pour contenir les couleurs -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_colors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_label"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Première ligne de couleurs -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                   >
+
+                    <Button
+                        android:id="@+id/color_rose"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#FF5B74"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/color_violet_clair"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#D39CFE"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/color_violet_fonce"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#A133FF"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/color_bleu_nuit"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#1F1B3D"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/color_orange"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#FF7B00"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/color_teal"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#00BFA5"
+                        app:cornerRadius="20dp" />
+                </LinearLayout>
+
+                <!-- Deuxième ligne de couleurs -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <Button
+                        android:id="@+id/color_cyan"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#00B0FF"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/color_marron"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#A5745A"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/color_rouge"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#FF3B5C"
+                        app:cornerRadius="20dp" />
+
+                    <Button
+                        android:id="@+id/color_indigo"
+                        android:layout_width="40dp" android:layout_height="40dp"
+                        android:layout_margin="6dp"
+                        android:insetTop="0dp" android:insetBottom="0dp"
+                        android:insetLeft="0dp" android:insetRight="0dp"
+                        android:minWidth="0dp" android:minHeight="0dp"
+                        app:backgroundTint="#6A45FF"
+                        app:cornerRadius="20dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bouton Enregistrer -->
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:text="Enregistré"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:backgroundTint="#FF5B74"
+            app:cornerRadius="30dp" />
+
+</RelativeLayout>
