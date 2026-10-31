@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F7FB"
+    tools:context=".TagActivity">
+
+    <ImageView
+        android:id="@+id/boutonRetour"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Retour"
+        android:background="@drawable/bg_fab"
+        android:backgroundTint="#A9BBC9"
+        android:src="@android:drawable/ic_menu_revert" />
+
+    <TextView
+        android:id="@+id/textTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/boutonRetour"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:text="Tag"
+        android:textColor="#272140"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textNouveau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textTag"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Nouveau"
+        android:textColor="#272140"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/editLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textNouveau"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#B8CCDD"
+        android:hint="Label"
+        android:inputType="text"
+        android:textColor="#272140"
+        android:textColorHint="#A9B9C9" />
+
+    <LinearLayout
+        android:id="@+id/rangee1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editLabel"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_palette"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/rangee2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#FF5B74" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#D9A6FF" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#8B0F8B" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#272140" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#FF8F2B" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#00C2A8" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#00C2E8" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#A67C5B" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#FF2D55" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_cercle"
+                android:backgroundTint="#6C5CE7" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/boutonEnregistrer"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#FF5B74"
+        android:text="Enregistré"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+</RelativeLayout>
