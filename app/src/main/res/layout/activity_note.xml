@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F7FB"
+    tools:context=".NoteActivity">
+
+    <ImageView
+        android:id="@+id/boutonFermer"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Fermer"
+        android:background="@drawable/bg_fab"
+        android:backgroundTint="#A9BBC9"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <TextView
+        android:id="@+id/textNouvelle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/boutonFermer"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Nouvelle"
+        android:textColor="#272140"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textNouvelle"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Note"
+        android:textColor="#272140"
+        android:textSize="34sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textNote"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_card"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <EditText
+            android:id="@+id/editTitre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#B8CCDD"
+            android:hint="Titre"
+            android:inputType="text"
+            android:textColor="#272140"
+            android:textColorHint="#A9B9C9" />
+
+        <EditText
+            android:id="@+id/editDescription"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#B8CCDD"
+            android:gravity="top"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:textColor="#272140"
+            android:textColorHint="#A9B9C9" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tagFamille"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tag"
+                android:backgroundTint="#9AA5B1"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Famille"
+                android:textColor="#272140"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tagEcole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_tag_actif"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Ecole"
+                android:textColor="#272140"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tagFinance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_tag"
+                android:backgroundTint="#9AA5B1"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Finance"
+                android:textColor="#576E82"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tagBoulot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_tag"
+                android:backgroundTint="#9AA5B1"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Boulot"
+                android:textColor="#272140"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tagPolitique"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tag"
+                android:backgroundTint="#9AA5B1"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Politique"
+                android:textColor="#272140"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textCreerTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/bg_drop_shadow"
+                android:elevation="4dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:text="Creer un tag"
+                android:textColor="#272140"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/listeTags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/boutonValider"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#FF5B74"
+        android:text="Ajouter"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+</RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -29,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
             String email = champEmail.getText().toString().trim();
 
             if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                textErreur.setVisibility(View.INVISIBLE);
+                Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+                intent.putExtra("email", email);
+                startActivity(intent);
             } else {
                 textErreur.setVisibility(View.VISIBLE);
             }

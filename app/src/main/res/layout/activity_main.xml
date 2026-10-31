@@ -16,7 +16,7 @@
         android:layout_marginBottom="19dp"
         android:text="Mytask"
         android:textColor="#0D0D0D"
-        android:textSize="34sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         />
 
@@ -28,7 +28,7 @@
         android:layout_marginStart="24dp"
         android:text="Organisez votre journée et rester zen"
         android:textSize="16sp"
-        android:fontFamily=""
+        android:fontFamily="@font/police"
         android:textColor="@color/black"
         android:layout_below="@+id/text1"
 
@@ -41,6 +41,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginBottom="17dp"
         android:text="Email"
+        android:textColor="#272140"
         android:layout_below="@+id/text2"
         android:textSize="16sp" />
 
@@ -65,9 +66,10 @@
         android:layout_below="@id/editTextTextEmailAddress2"
         android:layout_marginStart="24dp"
         android:layout_marginTop="-60dp"
-        android:text="Email invalide"
+        android:text="Veuillez fournir un email valide"
+        android:textSize="12sp"
         android:textColor="#FF0000"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button2"
