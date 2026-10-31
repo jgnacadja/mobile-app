@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    tools:context=".CreateTagActivity">
+
+    <ImageView
+        android:id="@+id/imageViewBack"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:src="@android:drawable/ic_menu_revert"
+        app:tint="#A0A0A0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTitleTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Tag\nNouveau"
+        android:textColor="#2C2C54"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBack" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleTag">
+
+        <EditText
+            android:id="@+id/editTextTagLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="32dp"
+            android:hint="Label"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <GridLayout
+            android:id="@+id/gridLayoutColors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:columnCount="5"
+            android:rowCount="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTagLabel">
+
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#FF4B72" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#C58BF2" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#800080" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#2C2C54" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#FF9800" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#00BCD4" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#2196F3" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#795548" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#F44336" />
+            <Button android:layout_width="45dp" android:layout_height="45dp" android:layout_margin="8dp" android:backgroundTint="#3F51B5" />
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btnEnregistrerTag"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="68dp"
+            android:backgroundTint="#FF4B72"
+            android:text="Enregistré"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
