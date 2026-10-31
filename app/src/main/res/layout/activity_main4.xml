@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@android:drawable/ic_menu_revert"
+        android:padding="4dp"
+        app:tint="#6B7280"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Titre -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tag\nNouveau"
+        android:textColor="#1A1A2E"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBack"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="48dp"
+        android:hint="Label"
+        app:boxBackgroundMode="none"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#1A1A2E"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/colorCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toBottomOf="@id/tilLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="5"
+            android:padding="16dp">
+
+            <View android:id="@+id/circle1" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_pink" android:layout_margin="8dp"/>
+            <View android:id="@+id/circle2" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_purple" android:layout_margin="8dp"/>
+            <View android:id="@+id/circle3" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_deep_purple" android:layout_margin="8dp"/>
+            <View android:id="@+id/circle4" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_black" android:layout_margin="8dp"/>
+            <View android:id="@+id/circle5" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_orange" android:layout_margin="8dp"/>
+
+            <View android:id="@+id/circle6" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_teal" android:layout_margin="8dp"/>
+            <View android:id="@+id/circle7" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_cyan" android:layout_margin="8dp"/>
+            <View android:id="@+id/circle8" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_brown" android:layout_margin="8dp"/>
+            <View android:id="@+id/circle9" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_red" android:layout_margin="8dp"/>
+            <View android:id="@+id/circle10" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/circle_indigo" android:layout_margin="8dp"/>
+        </GridLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnregistre"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="Enregistré"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        app:backgroundTint="#E91E63"
+        app:cornerRadius="28dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,10 +15,10 @@
         android:textColor="@color/dark_title"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="95dp"/>
+        android:layout_marginTop="95dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <!-- Sous-titre -->
     <TextView
@@ -28,24 +28,24 @@
         android:text="Organisez votre journée et restez zen"
         android:textColor="@color/dark_text"
         android:textSize="12sp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@id/txtTitle"
-        app:layout_constraintTop_toBottomOf="@id/txtTitle"
-        android:layout_marginTop="5dp"/>
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"/>
 
-    <!-- Label Email -->
+    <!--FORMULAIRE -->
+
     <TextView
-        android:id="@+id/txtEmail"
+        android:id="@+id/txtEmailLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
         android:textColor="@color/dark_text"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="435dp"/>
+        android:layout_marginTop="435dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <!-- Champ Email -->
     <EditText
         android:id="@+id/edtEmail"
         android:layout_width="0dp"
@@ -56,17 +56,14 @@
         android:background="@drawable/bg_email"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:hint=""
         android:textColor="@color/dark_text"
         android:textSize="14sp"
         android:inputType="textEmailAddress"
         android:singleLine="true"
-        android:importantForAutofill="yes"
-        app:layout_constraintTop_toBottomOf="@id/txtEmail"
+        app:layout_constraintTop_toBottomOf="@id/txtEmailLabel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Message d'erreur -->
     <TextView
         android:id="@+id/txtError"
         android:layout_width="wrap_content"
@@ -80,14 +77,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edtEmail"/>
 
-    <!-- Bouton OK -->
     <Button
         android:id="@+id/btnOk"
         android:layout_width="170dp"
         android:layout_height="54dp"
         android:layout_marginTop="58dp"
-        android:background="@drawable/bg_button"
         android:backgroundTint="#E91E63"
+        android:background="@drawable/bg_button"
         android:elevation="0dp"
         android:stateListAnimator="@null"
         android:text="OK"
@@ -99,6 +95,49 @@
         app:layout_constraintTop_toBottomOf="@id/edtEmail"
         app:rippleColor="#E91E63" />
 
+    <!--ECRAN SUCCES -->
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue"
+        android:textColor="@color/dark_title"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/txtEmailSuccess"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.45"/>
+
+    <TextView
+        android:id="@+id/txtEmailSuccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#9E9E9E"
+        android:textSize="14sp"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtWelcome"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:indeterminateTint="#E91E63"
+        android:visibility="gone"
+        android:layout_marginTop="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtEmailSuccess"/>
     <!-- Copyright -->
     <TextView
         android:id="@+id/txtCopyright"
