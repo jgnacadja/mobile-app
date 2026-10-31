@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:backgroundTint="#F2F7FB"
+    android:background="#F2F7FB"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home_empty">
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="MyTask"
         android:id="@+id/text1"
-        android:textSize="45dp"
+        android:textSize="45sp"
         android:textStyle="bold"
         android:layout_marginTop="7dp"
         android:layout_marginLeft="20dp"/>
@@ -26,27 +26,39 @@
         android:layout_marginLeft="30dp"
         android:layout_below="@id/text1"/>
 
-    <TextView
-        android:id="@+id/good_day"
-        android:layout_width="wrap_content"
+    <!-- ZONE 1 : Le message quand c'est vide (regroupé dans un LinearLayout) -->
+    <LinearLayout
+        android:id="@+id/empty_state_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bonne journée !! "
-        android:textSize="45dp"
-        android:textColor="#272140"
-        android:layout_marginTop="330dp"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/congrat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/good_day"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:textSize="18dp"
-        android:text="Félicitation , vous n'avez aucune tâche en "/>
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true">
 
+        <TextView
+            android:id="@+id/good_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bonne journée !! "
+            android:textSize="45sp"
+            android:textColor="#272140"/>
 
+        <TextView
+            android:id="@+id/congrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:text="Félicitation , vous n'avez aucune tâche en "/>
 
+        <TextView
+            android:id="@+id/attente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:text="attente"/>
+    </LinearLayout>
 
     <!-- ZONE 2 : La liste des notes (cachée au début) -->
     <ScrollView
@@ -65,17 +77,8 @@
             android:orientation="vertical"
             android:paddingBottom="20dp" />
     </ScrollView>
-    <TextView
-        android:id="@+id/attente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/good_day"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textSize="18dp"
-        android:text="attente"/>
 
-
+    <!-- Bouton + -->
     <Button
         android:id="@+id/bntAdd"
         android:layout_width="56dp"
@@ -90,8 +93,4 @@
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
 
-
 </RelativeLayout>
-
-
-

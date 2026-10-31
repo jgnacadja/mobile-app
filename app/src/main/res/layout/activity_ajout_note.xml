@@ -138,6 +138,7 @@
 
                     <!-- Bouton Ecole (style plein rose) -->
                     <Button
+                        android:id="@+id/btnEcole"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -156,6 +157,7 @@
 
                     <!-- Bouton Finance -->
                     <Button
+                        android:id="@+id/btnFinance"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -175,6 +177,7 @@
 
                     <!-- Bouton Boulot (contour violet) -->
                     <Button
+                        android:id="@+id/btnBoulot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:insetTop="0dp"
@@ -207,6 +210,7 @@
 
                     <!-- Bouton Politique -->
                     <Button
+                        android:id="@+id/btnPolitique"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"

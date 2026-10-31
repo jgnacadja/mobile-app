@@ -25,7 +25,7 @@ import com.google.android.material.button.MaterialButton;
 public class AjoutNote extends AppCompatActivity {
     private String selectedTagName = "Aucun";
     private String selectedTagColor = "#D9D9D9";
-    private Button BtnTag ,BtnFamille , BtnAjouter;
+    private Button BtnTag ,BtnFamille , BtnEcole ,BtnFinance , BtnPolitique,BtnBoulot, BtnAjouter;
     private EditText titre , desciption;
 
 
@@ -69,10 +69,31 @@ public class AjoutNote extends AppCompatActivity {
         //Creation des notes
         titre=findViewById(R.id.et_titre);
         desciption=findViewById(R.id.et_description);
-
+        BtnAjouter=findViewById(R.id.btn_ajouter);
         BtnFamille=findViewById(R.id.btnFamille);
+        BtnFinance=findViewById(R.id.btnFinance);
+        BtnEcole=findViewById(R.id.btnEcole);
+        BtnPolitique=findViewById(R.id.btnPolitique);
+        BtnBoulot=findViewById(R.id.btnBoulot);
+
         BtnFamille.setOnClickListener(v -> {
             selectedTagName = "Famille";
+            selectedTagColor = "#D9D9D9";
+        });
+        BtnBoulot.setOnClickListener(v -> {
+            selectedTagName = "Boulot";
+            selectedTagColor = "#D9D9D9";
+        });
+        BtnEcole.setOnClickListener(v -> {
+            selectedTagName = "Ecole";
+            selectedTagColor = "#D9D9D9";
+        });
+        BtnFinance.setOnClickListener(v -> {
+            selectedTagName = "Finance";
+            selectedTagColor = "#D9D9D9";
+        });
+        BtnPolitique.setOnClickListener(v -> {
+            selectedTagName = "Politique";
             selectedTagColor = "#D9D9D9";
         });
         BtnAjouter.setOnClickListener(v -> {

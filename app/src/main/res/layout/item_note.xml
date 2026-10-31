@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="12dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Le cercle de coche -->
+        <ImageView
+            android:id="@+id/img_check"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/checkbox_off_background"
+            app:tint="#D1D1D1" />
+
+        <!-- Le titre (ID: tv_note_title) -->
+        <TextView
+            android:id="@+id/tv_note_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img_check"
+            android:layout_marginStart="16dp"
+            android:text="Titre de la note"
+            android:textColor="#1A1A1A"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- La description (ID: tv_note_desc) -->
+        <TextView
+            android:id="@+id/tv_note_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_note_title"
+            android:layout_toEndOf="@id/img_check"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:text="Description"
+            android:textColor="#666666"
+            android:textSize="12sp" />
+
+        <!-- Le tag (ID: tv_note_tag) -->
+        <TextView
+            android:id="@+id/tv_note_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_note_desc"
+            android:layout_toEndOf="@id/img_check"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:background="#D9D9D9"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:text="Famille"
+            android:textColor="#272140"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
