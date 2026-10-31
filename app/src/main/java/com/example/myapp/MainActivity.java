@@ -1,32 +1,59 @@
 package com.example.myapp;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.EditText;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button loginButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        loginButton = findViewById(R.id.login);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        // 1. Récupérer les éléments graphiques du XML grâce à leurs IDs
+        EditText champEmail = findViewById(R.id.editTextTextEmailAddress);
+        Button boutonOk = findViewById(R.id.button);
+        TextView messageResultat = findViewById(R.id.textView2);
+
+        // 2. Écouter le clic sur le bouton OK
+        boutonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Récupérer le texte tapé par l'utilisateur
+                String emailSaisi = champEmail.getText().toString();
+
+                // Vérification basique (un email doit contenir un @ et un point)
+                if (emailSaisi.contains("@") && emailSaisi.contains(".")) {
+
+                    // SUCCÈS : Créer le pont vers la nouvelle page
+                    Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+                    // Transmettre l'email saisi pour l'afficher sur la 2ème page
+                    intent.putExtra("EMAIL_SAISI", emailSaisi);
+                    // Lancer la page
+                    startActivity(intent);
+
+                } else {
+                    // ERREUR : Afficher en rouge
+                    messageResultat.setText("Email invalide");
+                    messageResultat.setTextColor(Color.RED);
+                }
+            }
         });
 
-
-        loginButton.setOnClickListener(v -> {
-            // Handle login button click
+        // 3. Faire disparaître l'erreur quand on clique dans le champ email
+        champEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Remettre le sous-titre par défaut en gris
+                messageResultat.setText("Organisez votre journée et restez zen");
+                messageResultat.setTextColor(Color.GRAY);
+            }
         });
     }
 }
