@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -25,8 +26,9 @@ import com.google.android.material.button.MaterialButton;
 public class AjoutNote extends AppCompatActivity {
     private String selectedTagName = "Aucun";
     private String selectedTagColor = "#D9D9D9";
-    private Button BtnTag ,BtnFamille , BtnEcole ,BtnFinance , BtnPolitique,BtnBoulot, BtnAjouter;
+    private Button BtnTag ,BtnFamille , BtnEcole ,BtnFinance , BtnPolitique,BtnBoulot, BtnAjouter ;
     private EditText titre , desciption;
+    private ImageButton BtnClose;
 
 
     private ActivityResultLauncher<Intent> tagLauncher;
@@ -116,6 +118,16 @@ public class AjoutNote extends AppCompatActivity {
             finish(); // Ferme AjoutNote et retourne à MyTask
         });
 
+        BtnClose=findViewById(R.id.btn_close);
+        BtnClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(AjoutNote.this, Home_empty.class);
+                startActivity(i);
+            }
+        });
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -125,42 +137,55 @@ public class AjoutNote extends AppCompatActivity {
     // Méthode pour ajouter le tag dynamiquement
     private void addNewTagToScreen(String name, String colorHex) {
         LinearLayout container = findViewById(R.id.dynamic_tags_container);
-
-        // 1. Création du bouton
         MaterialButton newTagButton = new MaterialButton(this);
 
         newTagButton.setText(name);
         newTagButton.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 12);
-        newTagButton.setTextColor(Color.parseColor("#272140"));
         newTagButton.setAllCaps(false);
-
-        // 3. Couleur de fond
         newTagButton.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(colorHex)));
 
-        // 4. Conversion des DP en Pixels
+        // ⚠️ C'EST ICI QU'ON APPLIQUE LA COULEUR DE TEXTE ⚠️
+        newTagButton.setTextColor(getTextColorForBackground(colorHex));
+
         float density = getResources().getDisplayMetrics().density;
         int radiusPx = (int) (20 * density);
         int marginEndPx = (int) (8 * density);
 
-        // 5. Application des marges et tailles (comme dans ton XML)
-        newTagButton.setCornerRadius(radiusPx); // Coins arrondis 20dp
-        newTagButton.setInsetTop(0);            // insetTop="0dp"
-        newTagButton.setInsetBottom(0);         // insetBottom="0dp"
-        newTagButton.setMinHeight(0);           // minHeight="0dp"
-        newTagButton.setMinWidth(0);            // minWidth="0dp"
+        newTagButton.setCornerRadius(radiusPx);
+        newTagButton.setInsetTop(0);
+        newTagButton.setInsetBottom(0);
+        newTagButton.setMinHeight(0);
+        newTagButton.setMinWidth(0);
+        newTagButton.setPadding(0, 0, 0, 0);
 
-        newTagButton.setPadding(0 , 0, 0, 0);
-
-        // 6. Gestion des marges externes
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
-        // layout_marginEnd="8dp"
         params.setMargins(0, 0, marginEndPx, 0);
         newTagButton.setLayoutParams(params);
 
-        // 7. Ajout au conteneur
+        newTagButton.setOnClickListener(v -> {
+            selectedTagName = name;
+            selectedTagColor = colorHex;
+        });
+
         container.addView(newTagButton);
+    }
+
+    public static int getTextColorForBackground(String colorHex) {
+        int color = Color.parseColor(colorHex);
+        // Calcul de la luminosité (formule standard)
+        int r = Color.red(color);
+        int g = Color.green(color);
+        int b = Color.blue(color);
+        double luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+        // Si c'est clair, on met du noir. Si c'est sombre, on met du blanc.
+        if (luminance > 0.5) {
+            return Color.BLACK;
+        } else {
+            return Color.WHITE;
+        }
     }
 }

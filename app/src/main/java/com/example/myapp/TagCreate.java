@@ -2,8 +2,10 @@ package com.example.myapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +18,7 @@ public class TagCreate extends AppCompatActivity {
     private String selectedColor = "#FF5B74";
     private EditText etLabel;
     private Button btnSave;
+    private ImageButton BtnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,11 +61,19 @@ public class TagCreate extends AppCompatActivity {
             finish();
         });
 
-
+        BtnBack=findViewById(R.id.btn_back);
+        BtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
     }
 }
