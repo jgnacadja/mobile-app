@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         // 1. Récupérer les éléments graphiques du XML grâce à leurs IDs
         EditText champEmail = findViewById(R.id.editTextTextEmailAddress);
         Button boutonOk = findViewById(R.id.button);
-        // On réutilise le sous-titre pour afficher les messages
         TextView messageResultat = findViewById(R.id.textView2);
 
         // 2. Écouter le clic sur le bouton OK
@@ -30,9 +30,16 @@ public class MainActivity extends AppCompatActivity {
 
                 // Vérification basique (un email doit contenir un @ et un point)
                 if (emailSaisi.contains("@") && emailSaisi.contains(".")) {
-                    messageResultat.setText("L'email est valide");
-                    messageResultat.setTextColor(Color.GREEN);
+
+                    // SUCCÈS : Créer le pont vers la nouvelle page
+                    Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+                    // Transmettre l'email saisi pour l'afficher sur la 2ème page
+                    intent.putExtra("EMAIL_SAISI", emailSaisi);
+                    // Lancer la page
+                    startActivity(intent);
+
                 } else {
+                    // ERREUR : Afficher en rouge
                     messageResultat.setText("Email invalide");
                     messageResultat.setTextColor(Color.RED);
                 }
